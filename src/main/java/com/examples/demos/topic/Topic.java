@@ -1,5 +1,7 @@
 package com.examples.demos.topic;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Topic {
     private String id;
     private String name;
@@ -9,7 +11,8 @@ public class Topic {
 
     }
 
-    public Topic(String id, String name, String description) {
+    public Topic(@JsonProperty("id") String id, @JsonProperty("name") String name,
+            @JsonProperty("description") String description) {
         this.id = id;
         this.name = name;
         this.description = description;
